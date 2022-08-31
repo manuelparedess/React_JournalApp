@@ -2,7 +2,7 @@
 
 export const fileUpload = async( file ) => {
 
-    if(!file) throw new Error('No tenemos ningun archivo a subir');
+    if(!file) throw new Error("We don't have any file to upload");
 
     const cloudUrl = 'https://api.cloudinary.com/v1_1/dfo636dhg/upload';
 
@@ -17,7 +17,7 @@ export const fileUpload = async( file ) => {
             body: formData
         });
 
-        if( !resp.ok ) throw new Error('No se pudo subir imagen');
+        if( !resp.ok ) throw new Error('The image could not be uploaded');
 
         const cloudResp = await resp.json();
 

@@ -1,8 +1,10 @@
-import { TurnedInNot } from '@mui/icons-material'
-import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
-import { useMemo } from 'react'
-import { useDispatch } from 'react-redux'
-import { setActiveNote } from '../../store/journal/journalSlice'
+import { useMemo } from 'react';
+
+import { useDispatch } from 'react-redux';
+import { setActiveNote } from '../../store/journal/journalSlice';
+
+import { TurnedInNot } from '@mui/icons-material';
+import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
 export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
 

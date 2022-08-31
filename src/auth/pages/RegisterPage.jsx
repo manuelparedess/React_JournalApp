@@ -1,30 +1,33 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material'
-import React, { useState } from 'react'
-import { AuthLayout } from '../layout/AuthLayout';
-import { useForm } from '../../hooks/useForm';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { startCreatingUserWithEmailPassword } from '../../store/auth/thunks';
-import { useMemo } from 'react';
+
+import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material';
+import { AuthLayout } from '../layout/AuthLayout';
+
+import { useForm } from '../../hooks/useForm';
+import React, { useState, useMemo } from 'react';
 
 const formData = {
-  displayName: 'Manuel Paredes',
-  email: 'manuel@gmail.com',
-  password: '123456'
+  displayName: '',
+  email: '',
+  password: ''
 }
 
 const formValidations = {
-  email: [ (value) => value.includes('@'), 'El email debe tener un @' ],
-  password: [ (value) => value.length >= 6, 'El password debe tener mas de 6 letras' ],
-  displayName: [ (value) => value.length >= 1, 'El nombre es obligatorio' ]
+  email: [ (value) => value.includes('@'), 'The email must have an @' ],
+  password: [ (value) => value.length >= 6, 'The password must have more than 6 letters' ],
+  displayName: [ (value) => value.length >= 1, 'Name is required' ]
 }
 
 export const RegisterPage = () => {
 
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   const { status, errorMessage } = useSelector( state => state.auth );
+  
   const isCheckingAuthentication = useMemo( () => status === 'checking', [status] )
 
   const { 

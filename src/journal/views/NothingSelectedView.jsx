@@ -1,6 +1,7 @@
+import React from 'react';
+
 import { Grid, Typography } from '@mui/material';
 import { StarOutline } from '@mui/icons-material';
-import React from 'react';
 
 export const NothingSelectedView = () => {
   return (

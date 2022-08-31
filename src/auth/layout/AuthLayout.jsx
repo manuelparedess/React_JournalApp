@@ -1,5 +1,5 @@
-import { Grid, Typography } from '@mui/material'
-import React from 'react'
+import { Grid, Typography } from '@mui/material';
+import React from 'react';
 
 export const AuthLayout = ({ children, title='' }) => {
   return (

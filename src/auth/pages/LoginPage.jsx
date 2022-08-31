@@ -1,17 +1,18 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { useForm } from '../../hooks/useForm';
-import { AuthLayout } from '../layout/AuthLayout';
-import { useDispatch, useSelector } from "react-redux"
+
+import { useDispatch, useSelector } from "react-redux";
 import { startGoogleSignIn, startLoginWithEmailAndPassword } from '../../store/auth/thunks';
 
-import { Google } from '@mui/icons-material'
-import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material'
-import React, { useMemo } from 'react'
+import { AuthLayout } from '../layout/AuthLayout';
+import { Google } from '@mui/icons-material';
+import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material';
 
+import { useForm } from '../../hooks/useForm';
+import React, { useMemo } from 'react';
 
 const formData = {
-  email: 'manuel@gmail.com',
-  password: '123456'
+  email: '',
+  password: ''
 }
 
 export const LoginPage = () => {

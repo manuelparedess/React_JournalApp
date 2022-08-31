@@ -1,15 +1,16 @@
-import { MenuOutlined, LogoutOutlined } from '@mui/icons-material'
-import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material'
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { startLogout } from '../../store/auth/thunks'
+import React from 'react';
+
+import { useDispatch } from 'react-redux';
+import { startLogout } from '../../store/auth/thunks';
+
+import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material';
+import { MenuOutlined, LogoutOutlined } from '@mui/icons-material';
 
 export const NavBar = ({ drawerWidth }) => {
 
     const dispatch = useDispatch();
 
     const onLogout = () => {
-        
         dispatch( startLogout() );
     }
 

@@ -1,6 +1,8 @@
-import React from 'react'
-import { Navigate, Routes, Route } from 'react-router-dom'
-import { JournalPage } from '../pages/JournalPage'
+import React from 'react';
+
+import { Navigate, Routes, Route } from 'react-router-dom';
+
+import { JournalPage } from '../pages/JournalPage';
 
 export const JournalRoutes = () => {
     return (

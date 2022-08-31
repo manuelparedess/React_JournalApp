@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import { firebaseAuth } from '../firebase/config'
-import { onAuthStateChanged } from 'firebase/auth'
-import { login, logout } from '../store/auth/authSlice'
+import { firebaseAuth } from '../firebase/config';
+import { onAuthStateChanged } from 'firebase/auth';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { login, logout } from '../store/auth/authSlice';
 import { startLoadingNotes } from '../store/journal/thunks';
 
+import { useEffect } from 'react';
 
 
 export const useCheckAuth = () => {

@@ -1,11 +1,14 @@
-import { Button, Grid, IconButton, TextField, Typography } from '@mui/material';
-import { DeleteOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material';
-import { ImageGallery } from '../components/ImageGallery';
-import { useForm } from '../../hooks/useForm';
-import { useSelector, useDispatch } from 'react-redux';
 import { useMemo, useEffect, useRef } from 'react';
+import { useForm } from '../../hooks/useForm';
+
+import { useSelector, useDispatch } from 'react-redux';
 import { setActiveNote } from '../../store/journal/journalSlice';
 import { startDeletingNote, startSaveNote, startUploadingFiles } from '../../store/journal/thunks';
+
+import { ImageGallery } from '../components/ImageGallery';
+
+import { Button, Grid, IconButton, TextField, Typography } from '@mui/material';
+import { DeleteOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.css';
 
@@ -32,7 +35,7 @@ export const NoteView = () => {
 
     useEffect(() => {
       if( messageSaved.length > 0 ) {
-        Swal.fire('Nota actualizada', messageSaved, 'success');
+        Swal.fire('Updated note', messageSaved, 'success');
       }
 
     }, [messageSaved])

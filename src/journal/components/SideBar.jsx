@@ -1,9 +1,9 @@
+import React from 'react';
+import { SideBarItem } from './SideBarItem';
 
-import { Box, Divider, Drawer, List, Toolbar, Typography } from '@mui/material'
-import { TurnedInNot } from '@mui/icons-material'
-import { useSelector } from 'react-redux'
-import React from 'react'
-import { SideBarItem } from './SideBarItem'
+import { useSelector } from 'react-redux';
+
+import { Box, Divider, Drawer, List, Toolbar, Typography } from '@mui/material';
 
 export const SideBar = ({ drawerWidth }) => {
 
@@ -34,7 +34,7 @@ export const SideBar = ({ drawerWidth }) => {
 
                 <List>
                     {
-                        notes.map( note => (
+                        notes?.map( note => (
                             <SideBarItem key={ note.id } { ...note } />
                         ))
                     }

@@ -1,9 +1,10 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { AuthRoutes } from '../auth/routes/AuthRoutes'
-import { useCheckAuth } from '../hooks/useCheckAuth'
-import { JournalRoutes } from '../journal/routes/JournalRoutes'
-import { CheckingAuth } from '../ui/components/CheckingAuth'
+import { useCheckAuth } from '../hooks/useCheckAuth';
+
+import { AuthRoutes } from '../auth/routes/AuthRoutes';
+import { JournalRoutes } from '../journal/routes/JournalRoutes';
+import { CheckingAuth } from '../ui/components/CheckingAuth';
 
 export const AppRouter = () => {
 
@@ -23,7 +24,7 @@ export const AppRouter = () => {
                 : <Route path='/auth/*' element={ <AuthRoutes /> } />
             }
 
-            {/* Login y Registro */}
+            {/* Login and Register */}
             {/* <Route path='/auth/*' element={ <AuthRoutes /> } /> */}
 
             {/* JournalApp */}
